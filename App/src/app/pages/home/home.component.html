@@ -1,63 +1,11 @@
-<form [formGroup]="usuarioForm" class="form-control" (ngSubmit)="submit()" #formDir="ngForm">
-  <div>
-    <h2>Cadastro de Usuario</h2>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-
-      <label for="inputEmail4">Nome</label>
-      <input type="text" class="form-control" id="nome" formControlName="nome">
-
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Senha</label>
-      <input type="password" class="form-control" id="senha" formControlName="senha">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputAddress">Confirmar Senha</label>
-    <input type="password" class="form-control" id="confirmaSenha">
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputAddress2">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="teste@teste.com" formControlName="email">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-1">
-      <label for="idade">Idade</label>
-      <input type="number" class="form-control" id="inputCity" formControlName="idade">
-    </div>
-
-    <div class="form-group col-md-6">
-      <label for="inputState">Sexo</label>
-      <select id="inputState" class="form-control" formControlName="sexo">
-        <option selected></option>
-        <option slot="0">Masculino</option>
-        <option slot="1">Feminino</option>
-      </select>
-    </div>
-
-  </div>
-
-  <br>
-
-<button
-  type="submit"
-  class="btn btn-outline-primary btn-sm" style="margin-right: 10px;">Enviar Cadastro</button>
-
-
-<button type="reset"
-class="btn btn-outline-danger btn-sm">Cancelar</button>
-
-<br>
-<br>
-
-
-<div>
+<form>
+<div style="margin-left: 15px; margin-top: 10px;">
   <h4>Lista de usuarios no sistema</h4>
+  <br>
+  <button type="button" class="btn btn-outline-danger" [routerLink]="['/cadastro']" routerLinkActive="router-link-active" >Cadastrar novo usuario</button>
 </div>
-
-<table class="table table-hover table-bordered mt-04">
+<br>
+<table class="table table-hover table-bordered mt-04" style="margin-left: 15px; margin-right: 15px;">
   <thead>
     <tr>
       <th>Id</th>
@@ -79,7 +27,7 @@ class="btn btn-outline-danger btn-sm">Cancelar</button>
           <td>{{usuario.sexo}}</td>
           <td>{{usuario.idade}}</td>
           <td>
-            <button class="btn btn-outline-warning mx-2">Editar</button>
+            <button class="btn btn-outline-warning mx-2" [routerLink]="['editar', usuario.idusuario]">Editar</button>
             <button class="btn btn-outline-danger mx-2" (click)="deletar(usuario.idusuario)">Excluir</button>
           </td>
         </tr>

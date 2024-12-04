@@ -1,0 +1,3 @@
+<div *ngIf="usuario">
+  <app-formulario-cadastro [dadosUsuario]="usuario" [btnAcao]="btnAcao" (onSubmit)="editarUsuario($event)"></app-formulario-cadastro>
+</div>

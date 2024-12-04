@@ -1,8 +1,10 @@
 export interface UsuarioLista{
+  dados: UsuarioLista;
+
   idusuario?: number,
   nome: string;
-  sexo: string;
-  senha: string;
-  idade: number;
   email: string
+  sexo: string;
+  idade: string;
+  senha: string;
 }

@@ -26,5 +26,11 @@ export class UsuarioService {
 
   }
 
-  // AtualizarUsuario()
+  GetUsuarioId(Id: number):Observable<UsuarioLista>{
+    return this.http.get<UsuarioLista>(`${this.ApiUrl + "ObterId"}/${Id}`);
+  }
+
+  EditarUsuario(usuario: UsuarioLista):Observable<UsuarioLista[]>{
+    return this.http.put<UsuarioLista[]>(this.ApiUrl + "Atualizar", usuario);
+  }
 }
