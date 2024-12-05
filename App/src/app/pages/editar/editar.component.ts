@@ -17,12 +17,13 @@ import { response } from 'express';
 export class EditarComponent {
   constructor(private UsuarioService:UsuarioService, private router: Router, private route: ActivatedRoute){}
   btnAcao = "Editar";
+  btnTitulo = "Editar Usuario";
   usuario!: UsuarioLista;
 
   ngOnInit(){
     const id = Number(this.route.snapshot.paramMap.get('id'))
     this.UsuarioService.GetUsuarioId(id).subscribe(response => {
-      this.usuario = response.dados;
+      this.usuario = response;
     });
   }
 

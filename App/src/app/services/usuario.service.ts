@@ -27,7 +27,7 @@ export class UsuarioService {
   }
 
   GetUsuarioId(Id: number):Observable<UsuarioLista>{
-    return this.http.get<UsuarioLista>(`${this.ApiUrl + "ObterId"}/${Id}`);
+    return this.http.get<UsuarioLista>(`${this.ApiUrl + "ObterId"}?Id=${Id}`);
   }
 
   EditarUsuario(usuario: UsuarioLista):Observable<UsuarioLista[]>{

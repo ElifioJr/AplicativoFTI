@@ -27,7 +27,7 @@
           <td>{{usuario.sexo}}</td>
           <td>{{usuario.idade}}</td>
           <td>
-            <button class="btn btn-outline-warning mx-2" [routerLink]="['editar', usuario.idusuario]">Editar</button>
+            <button class="btn btn-outline-warning mx-2" [routerLink]="['/editar', usuario.idusuario]">Editar</button>
             <button class="btn btn-outline-danger mx-2" (click)="deletar(usuario.idusuario)">Excluir</button>
           </td>
         </tr>

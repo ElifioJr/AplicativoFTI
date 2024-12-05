@@ -1,5 +1,5 @@
 import { UsuarioLista } from './../../models/usuario';
-import { Component, EventEmitter, Input, OnInit, Output, output } from '@angular/core';
+import { Component, EventEmitter, input, Input, OnInit, Output, output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -12,11 +12,12 @@ import { RouterModule } from '@angular/router';
 })
 export class FormularioCadastroComponent implements OnInit   {
   @Output () onSubmit = new EventEmitter<UsuarioLista>();
-  @Input() dadosUsuario : UsuarioLista | null = null
+  @Input() btnAcao! : string;
+  @Input () btnTitulo!: string;
+  @Input() dadosUsuario : UsuarioLista | null = null;
   usuarioForm!: FormGroup;
 
   ngOnInit(): void {
-
     this.usuarioForm = new FormGroup({
       id: new FormControl(this.dadosUsuario ? this.dadosUsuario.idusuario : 0 ),
       nome: new FormControl(this.dadosUsuario ? this.dadosUsuario.nome :  ''),
